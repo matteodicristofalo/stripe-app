@@ -1,0 +1,26 @@
+<div class="loader" *ngIf="showLoader">
+    <img src="../../assets/loader.gif">
+</div>
+<div class="container">
+    <h2>Checkout with Stripe</h2>
+    <form [formGroup]="formData">
+        <label for="firstName">First name</label>
+        <input type="text" formControlName="firstName">
+        <label for="lastName">Last name</label>
+        <input type="text" formControlName="lastName">
+        <label for="street">Street</label>
+        <input type="text" formControlName="street">
+        <label for="city">City</label>
+        <input type="text" formControlName="city">
+        <label for="country">Country</label>
+        <input type="text" formControlName="country">
+        <label for="zipCode">ZIP Code</label>
+        <input type="text" formControlName="zipCode">
+        <label for="phone">Phone</label>
+        <input type="text" formControlName="phone">
+        <label for="card">Card</label>
+        <div id="card-element"></div>
+        <button (click)="buy()" [disabled]="!formData.valid">Buy</button>
+    </form>
+</div>
+
